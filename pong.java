@@ -1,3 +1,7 @@
+// My first swing animation game
+//Using KeyListener, MouseMotionListener
+//Created by: Aevery
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
