@@ -1,12 +1,12 @@
 // My first swing animation game
-//Using KeyListener, MouseMotionListener
-//Created by: Aevery
+// Using KeyListener, MouseMotionListener
+// Created by: Aevery
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class pong implements ActionListener, KeyListener, MouseListener{
+public class pong implements ActionListener, KeyListener, MouseMotionListener{
 	//Properties
 	JFrame frame;
 	AnimationPanelPong panel;
@@ -43,7 +43,7 @@ public class pong implements ActionListener, KeyListener, MouseListener{
 	
 	public void keyTyped(KeyEvent evt){
 	}
-	
+	//This is an overriden method for Mouse
 	public void mouseMoved(MouseEvent evt){
 	}
 	
@@ -76,7 +76,7 @@ public class pong implements ActionListener, KeyListener, MouseListener{
 		//set panel
 		panel.setLayout(null);
 		panel.setPreferredSize(new Dimension(700,700));
-		panel.addMouseListener(this);
+		panel.addMouseMotionListener(this);
 		
 		//frame
 		frame.addKeyListener(this);
