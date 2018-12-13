@@ -21,22 +21,22 @@ public class pong implements ActionListener, KeyListener, MouseMotionListener{
 	
 	public void keyReleased(KeyEvent evt){
 		if(evt.getKeyCode() == 38){
-			panel.blnP1Moves = true;
+			panel.blnGame = true;
 			panel.blnUp = false;
 		}
 		else if(evt.getKeyCode() == 40){
-			panel.blnP1Moves = true;
+			panel.blnGame = true;
 			panel.blnDown = false;
 		}
 	}
 	
 	public void keyPressed(KeyEvent evt){
 		if(evt.getKeyCode() == 38){
-			panel.blnP1Moves = true;
+			panel.blnGame = true;
 			panel.blnUp = true;
 		}
 		else if(evt.getKeyCode() == 40){
-			panel.blnP1Moves = true;
+			panel.blnGame = true;
 			panel.blnDown = true;
 		}
 	}
@@ -45,6 +45,7 @@ public class pong implements ActionListener, KeyListener, MouseMotionListener{
 	}
 	//This is an overriden method for Mouse
 	public void mouseMoved(MouseEvent evt){
+		panel.intBar2Y = evt.getY();
 	}
 	
 	public void mouseDragged(MouseEvent evt){
@@ -57,15 +58,12 @@ public class pong implements ActionListener, KeyListener, MouseMotionListener{
 	}
 	
 	public void mouseReleased(MouseEvent evt){
-		panel.intBar2Y = evt.getY();	
 	}
 	
 	public void mousePressed(MouseEvent evt){
-		panel.intBar2Y = evt.getY();
 	}
 	
 	public void mouseClicked(MouseEvent evt){
-		panel.intBar2Y = evt.getY();
 	}
 	
 	//Constructor

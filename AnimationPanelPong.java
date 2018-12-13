@@ -11,12 +11,14 @@ public class AnimationPanelPong extends JPanel{
 	int intBallX = 65;
 	int intBallY = 330;
 	
+	int intP1Point = 0;
+	int intP2Point = 0;
+	
 	boolean blnDown = false;
 	boolean blnUp = false;
-	boolean blnP1Moves = false;
+	boolean blnGame = false;
 	boolean blnP1Hit = false;
 	boolean blnP2Hit = false;
-	
 	
 	
 	//Methods
@@ -37,23 +39,30 @@ public class AnimationPanelPong extends JPanel{
 		}
 		
 		//possibility to hit
-		if(intBallX == 50){
-			blnP1Hit = true;
+		if(intBallX == 65){
 			blnP2Hit = false;
+			blnP1Hit = true;
+			
 		}
-		if(intBallX == 650){
-			blnP2Hit = true;
+		else if(intBallX == 630){
 			blnP1Hit = false;
+			blnP2Hit = true;
 		}
 		
-		//ball moves
-		if(blnP1Moves && intBallX >= 65 && intBallX<=630){
-			if((intBallY >= intBar1Y || intBallY+30 <= intBar1Y+30)){
-				intBallX = intBallX + 3;
-			}
-			//else if((intBallY >= intBar2Y || intBallY+30 <= intBar2Y+30)){
-			//	intBallX = intBallX - 3;
-			//}
+		/*if(intBallY == 30){
+			intBallY = intBallY + 5;
+		}
+		if(intBallY == 670){
+			intBallY = intBallY - 5;
+		}*/
+		
+		if(blnP1Hit){
+			intBallX = intBallX + 5;
+			//intBallY = intBallY + 5;
+		}
+		if(blnP2Hit){
+			intBallX = intBallX - 5;
+			//intBallY = intBallY - 5;
 		}
 		
 		//screen
@@ -72,10 +81,10 @@ public class AnimationPanelPong extends JPanel{
 		
 		
 		//player movements
-		if(blnDown && blnP1Moves){
-			intBar1Y = intBar1Y + 3;;
+		if(blnDown){
+			intBar1Y = intBar1Y + 3;
 		}
-		if(blnUp && blnP1Moves){
+		if(blnUp){
 			intBar1Y = intBar1Y - 3;
 		}
 		
